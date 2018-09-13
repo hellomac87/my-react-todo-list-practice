@@ -2,8 +2,9 @@ import React from 'react';
 
 const TodoInput = () => {
     return (
-        <div>
-            
+        <div className="TodoInput-Wrap">
+            <input type="text"/>
+            <button>add</button>
         </div>
     );
 };

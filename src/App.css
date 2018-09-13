@@ -1,1 +1,65 @@
 @charset "utf-8";
+*{
+    box-sizing: border-box;
+}
+body{
+    background: #563f67;
+    background-repeat: no-repeat;
+}
+h1{
+    text-align: center;
+    color:#563f67;
+}
+.App{
+    width:700px;
+    height: 80vh;
+    margin: 10vh auto;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+    border-radius:15px;
+    background: #fff;
+    padding:30px 40px;
+}
+.TodoList{
+    height: 50%;
+    padding:15px;
+    margin-bottom: 30px;
+    overflow: auto;
+    border:1px solid #563f67;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.1);
+}
+.TodoItem{
+    padding:10px 5px;
+    margin-bottom: 10px;
+    box-shadow: -1px 2px 5px rgba(0,0,0,0.2);
+    border-radius:10px;
+    background: #fff;
+}
+.TodoItem input[type="checkbox"]{
+    margin-right: 10px;
+}
+.TodoInput-Wrap{
+    display:flex;
+    flex-direction: column;
+    font-size:1rem;
+}
+.TodoInput-Wrap input{
+    width:100%;
+    height: 30px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+}
+.TodoInput-Wrap button{
+    width:100%;
+    height: 30px;
+    color:#ffffff;
+    display: block;
+    background: #563f67;
+    border:0;
+    padding: 0;
+    font-size:1rem;
+    cursor:pointer;
+}
+.TodoInput-Wrap button:active{
+    background: #3d2b49;
+}
