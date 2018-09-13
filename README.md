@@ -11,3 +11,5 @@ $ create-react-app my-todo-app
 
 ## 불필요한 파일 삭제
 > src / App.test.js, logo.svg, index.css, App.css
+
+## 컴포넌트 분리해보기
