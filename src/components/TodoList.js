@@ -7,7 +7,7 @@ const TodoList = (props) => {
     const todosList = todos.map(todoObj => (
       <TodoItem key={todoObj.id} todo={todoObj.todo} done={todoObj.done}/>
     ));
-    console.log("todosList : ",todosList);
+    // console.log("todosList : ",todosList);
     return (
         <div className="TodoList">
             {todosList}

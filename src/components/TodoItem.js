@@ -1,15 +1,22 @@
 import React from 'react';
 
 const TodoItem = (props) => {
-    console.log("todoitem props : ", props)
+    // console.log("todoitem props : ", props)
     return (
         <div className="TodoItem">
-            <input 
-            onClick={() => console.log(props.todo)}
-            type="checkbox" 
-            done={props.done}
-            />
-            <label>{props.todo}</label>
+            <label>
+                <input 
+                onClick={() => console.log("click todo item!")}
+                type="checkbox" 
+                done={props.done}
+                />
+                {props.todo}
+            </label>
+            <button 
+                onClick={() => console.log("click remove btn!")}
+            >
+            remove
+            </button>
         </div>
     );
 };

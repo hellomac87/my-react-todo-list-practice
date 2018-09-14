@@ -1,12 +1,22 @@
 import React from 'react';
+import propTypes from 'prop-types'
 
-const TodoInput = () => {
+const TodoInput = (props) => {
     return (
-        <div className="TodoInput-Wrap">
-            <input type="text"/>
-            <button>add</button>
-        </div>
+        <form className="TodoInput-Wrap" onSubmit={props.handleSubmit}>
+            <input type="text" value={props.value} onChange={props.handleInput} />
+            <button type="submit">add</button>
+        </form>
     );
 };
+
+TodoInput.propTypes = {
+  handleInput : propTypes.func,
+};
+
+TodoInput.defaultProps = {
+    handleInput: () => console.warn("handleInput is not defined"),
+};
+
 
 export default TodoInput;

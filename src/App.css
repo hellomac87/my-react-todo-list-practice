@@ -24,9 +24,8 @@ h1{
     padding:15px;
     margin-bottom: 30px;
     overflow: auto;
-    border:1px solid #563f67;
     border-radius: 5px;
-    background: rgba(0,0,0,0.1);
+    background: rgba(216, 161, 198, 0.1);
 }
 .TodoItem{
     padding:10px 5px;
@@ -34,9 +33,19 @@ h1{
     box-shadow: -1px 2px 5px rgba(0,0,0,0.2);
     border-radius:10px;
     background: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.TodoItem label{
+    width:100%;
+    display: flex;
+    align-items: center;
 }
 .TodoItem input[type="checkbox"]{
     margin-right: 10px;
+}
+.TodoItem button{
+ float:right;
 }
 .TodoInput-Wrap{
     display:flex;
