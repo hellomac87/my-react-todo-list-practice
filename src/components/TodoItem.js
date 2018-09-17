@@ -1,24 +1,39 @@
 import React from 'react';
+import propTypes from "prop-types";
 
 const TodoItem = (props) => {
     // console.log("todoitem props : ", props)
     return (
         <div className="TodoItem">
             <label>
-                <input 
-                onClick={() => console.log("click todo item!")}
-                type="checkbox" 
-                done={props.done}
+                <input
+                onClick={props.handleCheck}
+                type="checkbox"
                 />
-                {props.todo}
             </label>
+            <span className="todo-content">
+            {
+                props.isEdit ? (<input placeholder={props.todo}/>) : props.todo 
+            }
+            </span>
             <button 
-                onClick={() => console.log("click remove btn!")}
-            >
-            remove
+                onClick={props.handleRemove}>
+                remove
+            </button>
+            <button
+                onClick={props.handleEdit}>
+                edit
             </button>
         </div>
     );
+};
+
+TodoItem.propTypes = {
+    handleCheck: propTypes.func,
+};
+
+TodoItem.defaultProps = {
+  handleCheck: () => console.warn("handleCheck is not defined"),
 };
 
 export default TodoItem;

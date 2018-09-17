@@ -37,12 +37,18 @@ h1{
     justify-content: space-between;
 }
 .TodoItem label{
-    width:100%;
-    display: flex;
-    align-items: center;
+
 }
+
 .TodoItem input[type="checkbox"]{
     margin-right: 10px;
+}
+.TodoItem input[type="checkbox"]:checked + .todo-content{
+    text-decoration: line-through;
+}
+.todo-content{
+    display: flex;
+    align-items: center;
 }
 .TodoItem button{
  float:right;

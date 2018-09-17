@@ -9,6 +9,8 @@ class App extends Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
   state = {
     value: "",
@@ -17,17 +19,17 @@ class App extends Component {
       {
         id: 1,
         todo: "todo todo todo",
-        done: null
+        isEdit: false,
       },
       {
         id: 2,
         todo: "todo2 todo2 todo2",
-        done: null
+        isEdit: false,
       },
       {
         id: 3,
         todo: "todo3 todo3 todo3",
-        done: null
+        isEdit: false,
       }
     ]
   };
@@ -47,10 +49,33 @@ class App extends Component {
     this.setState({
       todos: todos.concat({
         id: lastIndexId,
-        todo: this.state.value,
-        done: null
+        todo: this.state.value
       }),
       value: ""
+    });
+  }
+
+  handleEdit(id) {
+    const { todos } = this.state;
+    const index = todos.findIndex(todo => todo.id === id);
+    todos[index].isEdit = !todos[index].isEdit
+    this.setState({
+      todos: todos
+    });
+
+    console.log(this.state.todos[index].isEdit);
+  }
+
+  handleRemove = (id) => {
+    const { todos } = this.state;
+    const index = todos.findIndex(todo => todo.id === id);
+
+    // slice 전후로 데이터들을 복사하고, 우리가 찾은 index는 제외시킵니다
+    this.setState({
+      todos: [
+        ...todos.slice(0, index),
+        ...todos.slice(index + 1, todos.length)
+      ]
     });
   }
 
@@ -59,7 +84,11 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Todo List</h1>
-        <TodoList todos={this.state.todos} />
+        <TodoList
+          todos={this.state.todos}
+          handleEdit={this.handleEdit}
+          handleRemove={this.handleRemove}
+        />
         <TodoInput
           value={this.state.value}
           handleInput={this.handleInput}

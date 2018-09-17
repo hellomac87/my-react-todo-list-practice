@@ -11,11 +11,13 @@ const TodoInput = (props) => {
 };
 
 TodoInput.propTypes = {
-  handleInput : propTypes.func,
+    handleInput : propTypes.func,
+    handleSubmit: propTypes.func,
 };
 
 TodoInput.defaultProps = {
     handleInput: () => console.warn("handleInput is not defined"),
+    handleSubmit: () => console.warn("handleSubmit is not defined"),
 };
 
 
